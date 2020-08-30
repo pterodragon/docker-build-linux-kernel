@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+    kernel_compile:
+        build: .
+        container_name: kernel_compile
+        image: kernel_compile
+        stdin_open: true
+        tty: true
+        volumes:
+            - ./:/home/wing/Documents/github/kernel_compile
+            - /boot:/boot
+        cap_add:
+            - SYS_PTRACE
+        security_opt:
+            - seccomp:unconfined
+        network_mode: "host"
