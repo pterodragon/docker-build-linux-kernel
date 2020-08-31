@@ -1,0 +1,18 @@
+#0  poll (filp=0xffff88800e3ac100, wait=0xffffc90000723bf0) at /root/lkmc/out.docker/kernel_modules/x86_64/kernel_modules/poll.c:44
+#1  0xffffffff812b016a in full_proxy_poll (filp=0xffff88800e3ac100, wait=0xffffc90000723bf0)
+at /root/lkmc/submodules/linux/fs/debugfs/file.c:245
+#2  0xffffffff811bde76 in vfs_poll (pt=<optimized out>, file=<optimized out>) at /root/lkmc/submodules/linux/include/linux/poll.h:90
+#3  do_pollfd (busy_flag=<optimized out>, can_busy_poll=<optimized out>, pwait=<optimized out>, pollfd=<optimized out>)
+at /root/lkmc/submodules/linux/fs/select.c:859
+#4  do_poll (end_time=<optimized out>, wait=<optimized out>, list=<optimized out>) at /root/lkmc/submodules/linux/fs/select.c:907
+#5  do_sys_poll (ufds=<optimized out>, nfds=<optimized out>, end_time=<optimized out>) at /root/lkmc/submodules/linux/fs/select.c:1001
+#6  0xffffffff811be78b in __do_sys_poll (timeout_msecs=<optimized out>, nfds=<optimized out>, ufds=<optimized out>)
+at /root/lkmc/submodules/linux/fs/select.c:1059
+#7  __se_sys_poll (timeout_msecs=<optimized out>, nfds=<optimized out>, ufds=<optimized out>)
+at /root/lkmc/submodules/linux/fs/select.c:1047
+#8  __x64_sys_poll (regs=<optimized out>) at /root/lkmc/submodules/linux/fs/select.c:1047
+#9  0xffffffff8100241d in do_syscall_64 (nr=<optimized out>, regs=0xffffc90000723f58)
+at /root/lkmc/submodules/linux/arch/x86/entry/common.c:290
+#10 0xffffffff81800091 in entry_SYSCALL_64 () at /root/lkmc/submodules/linux/arch/x86/entry/entry_64.S:175
+#11 0x0000000000000000 in ?? ()
+
