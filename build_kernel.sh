@@ -1,6 +1,4 @@
-kernel_version=linux-5.4
-wget "https://git.kernel.org/torvalds/t/$kernel_version.tar.gz"
-tar xvzf "$kernel_version.tar.gz"
-cd $kernel_version
+cd linux && git checkout v5.4
+
 cp ../.config .
-bear make -j6
+bear make -j6 INSTALL_HDR_PATH=kernel_header_install headers_install
